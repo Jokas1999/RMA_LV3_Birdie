@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/birdListFragment">
+
+    <fragment
+        android:id="@+id/birdListFragment"
+        android:label="birdListFragment"
+        tools:layout="@layout/fragment_bird_list"
+        android:name="com.example.lv3_zadatak.ui.bird_list.BirdListFragment">
+        <action
+            android:id="@+id/action_taskListFragment_to_newBirdFragment"
+            app:destination="@id/newBirdFragment" />
+        <action
+            android:id="@+id/action_taskListFragment_to_detailsFragment"
+            app:destination="@id/birdDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newBirdFragment"
+        android:label="newBirdFragment"
+        tools:layout="@layout/fragment_new_bird"
+        android:name="com.example.lv3_zadatak.ui.bird_new.NewBirdFragment">
+
+        <action
+            android:id="@+id/action_newBirdFragment_to_taskListFragment"
+            app:destination="@id/birdListFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/birdDetailsFragment"
+        android:name="com.example.lv3_zadatak.ui.bird_details.BirdDetailsFragment"
+        android:label="birdDetailsFragment"
+        tools:layout="@layout/fragment_bird_details" >
+        <argument
+            android:name="birdID"
+            app:argType="long" />
+    </fragment>
+</navigation>
